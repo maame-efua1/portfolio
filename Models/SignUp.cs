@@ -18,5 +18,7 @@ namespace EFolio1.Models
         
         public string confirmpassword { get; set; }
 
+        public DateTime datecreated { get; set; } = DateTime.Now;
+
     }
 }

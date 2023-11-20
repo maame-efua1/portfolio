@@ -34,7 +34,7 @@
                 <div class="col-lg-10 col-12">
                     <!-- Right Button -->
                     <div class="dl-cv">
-                        <a class="button-1" >Sign Out</a>
+                        <a class="button-1" asp-action="SignOut" >Sign Out</a>
                     </div>
                     <!-- Menu -->
                     <div class="menu">
@@ -56,7 +56,7 @@
                                     <a class="nav-link" href="#blog">Blog</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#contact">Contact Us</a>
+                                    <a class="nav-link" asp-controller="Home" asp-action="Contact">Contact Us</a>
                                 </li>
                             </ul>
                         </nav>
@@ -764,7 +764,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="single-input">
-                                        <input type="text" name="phone" placeholder="Your Phone">
+                                        <input type="number" name="phone" placeholder="Your Phone">
                                         <i class="fas fa-mobile-alt"></i>
                                     </div>
                                 </div>

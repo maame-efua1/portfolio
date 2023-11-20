@@ -65,7 +65,7 @@ namespace EFolio1.Controllers
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO Registration (firstname, lastname, username, password) VALUES (@firstname, @lastname, @username, @password)";
+                    string query = "INSERT INTO Registration (firstname, lastname, username, password, datecreated) VALUES (@firstname, @lastname, @username, @password, @datecreated)";
 
                     SqlCommand command = new SqlCommand(query, connection);
 
@@ -74,7 +74,7 @@ namespace EFolio1.Controllers
                     command.Parameters.AddWithValue("@lastname", User.lastname);
                     command.Parameters.AddWithValue("@username", User.username);
                     command.Parameters.AddWithValue("@password", User.password);
-
+                    command.Parameters.AddWithValue("@datecreated", User.datecreated);
                     try
                     {
                         connection.Open();

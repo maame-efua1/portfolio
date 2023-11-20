@@ -64,3 +64,4 @@ D:\EFOLIO1\obj\Debug\net8.0\refint\EFolio1.dll
 D:\EFOLIO1\obj\Debug\net8.0\EFolio1.pdb
 D:\EFOLIO1\obj\Debug\net8.0\EFolio1.genruntimeconfig.cache
 D:\EFOLIO1\obj\Debug\net8.0\ref\EFolio1.dll
+D:\EFOLIO1\obj\Debug\net8.0\EFolio1.sourcelink.json
