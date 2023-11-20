@@ -1,0 +1,104 @@
+
+
+.login-container {
+  width: 100%;
+  margin-top:5%;
+  
+}
+
+
+
+/* Bordered form */
+form {
+  width :40%;
+  margin-left:30%;
+  flex-direction: column;
+}
+
+ #heading{
+  text-align: center;
+  color:#8E44AD;
+}
+#heading3 {
+    text-align: center;
+    color: #0a0202;
+}
+
+  #link2
+ {
+     text-decoration:underline;
+     color:#355efb
+ }
+
+  #link2:hover{
+      cursor:pointer;
+  }
+
+    #link1:hover {
+        cursor: pointer;
+    }
+
+#heading2 {
+    text-align: center;
+    color: #0a0202;
+}
+
+#link1 {
+    text-decoration: underline;
+    color: #355efb
+}
+
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #8647a0;
+  box-sizing: border-box;
+  border-radius: 9px;
+}
+
+/* Set a style for all buttons */
+button {
+    background: #8647a0;
+    color: #ffffff;
+    padding: 14px 20px;
+    border-radius: 7px;
+    border: 1px solid ;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  background-color: #67377c;
+}
+
+
+
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+#pass {
+    text-decoration: underline;
+}
+
+/* Change styles for span on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  
+}

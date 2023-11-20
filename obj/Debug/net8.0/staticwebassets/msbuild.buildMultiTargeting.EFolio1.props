@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EFolio1.props" />
+</Project>

@@ -1,0 +1,68 @@
+﻿
+<head>
+    <link rel="stylesheet" href="~/loginstyle.css" />
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- Start Header Area -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <!-- Logo -->
+                <div class="col-lg-2 col-12 align-self-center">
+                    <div class="logo">
+                        <a>
+                            <img class="light-logo" src="~/img/white-logo.png" alt="logo" />
+                            <img class="dark-logo" src="~/img/white-logo.png" alt="logo" />
+                        </a>
+                    </div>
+                </div>
+                <!-- Header Right -->
+                <div class="col-lg-10 col-12">
+                    <!-- Right Button -->
+                    <div class="dl-cv">
+                        <a class="button-1" asp-controller="Start" asp-action="SignIn">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Header Area -->
+    <section class="login-area pt-20 pb-50" id="login">
+        <div class="login-container">
+            <form method="post">
+                <div class="container">
+                    <h2 id="heading">Sign Up</h2>
+                    <h6 id="heading2">Already have an account? <a id="link1" asp-controller="Start" asp-action="SignIn">Sign In</a></h6><br />
+                    <label for="firstname"><b>First Name</b></label>
+                    <input type="text" placeholder="Enter First Name" id="firstname" name="firstname" required>
+
+                    <label for="lastname"><b>Last Name</b></label>
+                    <input type="text" placeholder="Enter Last Name" id="lastname" name="lastname" required>
+
+                    <label for="username"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" id="username" name="username" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" id="password" name="password" required>
+
+                    <label for="psw"><b> Confirm Password</b></label>
+                    <input type="password" placeholder="Confirm Password" id="confirmpassword" name="confirmpassword" required>
+
+
+
+                    <button type="submit">Sign Up</button><br>
+
+                </div>
+
+
+            </form>
+        </div>
+    </section>
+</body>
