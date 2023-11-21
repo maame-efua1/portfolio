@@ -148,12 +148,35 @@ namespace EFolio1.Controllers
             return RedirectToAction("Index", "Management");
         }
 
-        public IActionResult Edit(int userId, string newName)
+        public IActionResult Update()
         {
             
+            return View();
+        }
+        public IActionResult Edit(int userId, SignUp User)
+        {
+            string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=EFolio;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = $"UPDATE Registration SET firstname=@firstname,lastname=@lastname,username=@username WHERE UserId = {userId};";
+
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+
+
+                command.Parameters.AddWithValue("@firstname", User.firstname);
+                command.Parameters.AddWithValue("@lastname", User.lastname);
+                command.Parameters.AddWithValue("@username", User.username);
+                command.Parameters.AddWithValue("@userid", userId);
+                command.Parameters.AddWithValue("@datecreated", User.datecreated);
+                
+
+                command.ExecuteNonQuery();
+                connection.Close();
 
                 return RedirectToAction("Users");
-            
+        }
         }
 
         public IActionResult CEdit()
