@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Qg7keKn8p1KcAUJle00xAEItMI3aesiaEEZU2Zg3IIc=",
+  "Hash": "uewQef1bXSt15TMMrMBzmb0N1FGsV6jVY2XvpA/mlek=",
   "Source": "EFolio1",
   "BasePath": "_content/EFolio1",
   "Mode": "Default",
@@ -680,6 +680,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\about.jpeg"
+    },
+    {
+      "Identity": "D:\\EFOLIO1\\wwwroot\\img\\avatar.jfif",
+      "SourceId": "EFolio1",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\EFOLIO1\\wwwroot\\",
+      "BasePath": "_content/EFolio1",
+      "RelativePath": "img/avatar.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\avatar.jfif"
     },
     {
       "Identity": "D:\\EFOLIO1\\wwwroot\\img\\blog\\blog1.jpeg",

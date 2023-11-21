@@ -137,6 +137,10 @@
       "PackagePath": "staticwebassets\\img\\about.jpeg"
     },
     {
+      "Id": "D:\\EFOLIO1\\wwwroot\\img\\avatar.jfif",
+      "PackagePath": "staticwebassets\\img\\avatar.jfif"
+    },
+    {
       "Id": "D:\\EFOLIO1\\wwwroot\\img\\blog\\blog1.jpeg",
       "PackagePath": "staticwebassets\\img\\blog\\blog1.jpeg"
     },

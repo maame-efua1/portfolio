@@ -6,7 +6,7 @@ namespace EFolio1.Models
     public class SignUp
     {
         
-        public int userid { get; set; }
+        public string userid { get; set; }
         
         public string firstname { get; set; }
         
@@ -19,6 +19,8 @@ namespace EFolio1.Models
         public string confirmpassword { get; set; }
 
         public DateTime datecreated { get; set; } = DateTime.Now;
+
+        public int usercount { get; set; }
 
     }
 }

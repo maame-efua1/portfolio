@@ -63,39 +63,8 @@ namespace EFolio1.Controllers
             return RedirectToAction("SignIn", "Start");
         }
 
-        public IActionResult Contact()
-        {
-            string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=EFolio;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
-
-            SqlConnection connection = new SqlConnection(connectionString);
-            
-                string query = " select userid ,name,email,phone,subject,message from Contact;";
-
-                SqlCommand command = new SqlCommand(query, connection);
-
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                List<Contacts> contacts = new List<Contacts>();
-
-                while (reader.Read())
-            {
-                Contacts contact = new Contacts();
-                contact.userid = reader["userid"].ToString();
-                contact.name = reader["name"].ToString();
-                contact.email = reader["email"].ToString();
-                contact.phone = reader["phone"].ToString();
-                contact.subject = reader["subject"].ToString();
-                contact.message = reader["message"].ToString();
-                //contact.datecreated = reader["datecreated"].ToString("yyyy-MM-dd HH:mm:ss");
-
-                contacts.Add(contact);
-            }
-            connection.Close();
-                
-            return View(contacts);
-        }
+        
+        
         public IActionResult Privacy()
         {
             return View();

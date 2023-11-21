@@ -1,0 +1,204 @@
+﻿
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 550px;
+            flex-direction: column;
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            background-color: #f1f1f1;
+            height: 98.5%;
+            border: 2px solid #8E44AD;
+        }
+
+        #avatar {
+            margin-top: 8%;
+            border-radius: 200px;
+            margin-bottom: 5%;
+            width: 80%;
+            border: 2px solid #8E44AD;
+        }
+
+        .well {
+            border: 2px solid #8E44AD;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #navul {
+            color: black;
+        }
+
+            #navul .active {
+                color: white;
+                background-color: #8E44AD;
+            }
+
+
+        /* On small screens, set height to 'auto' for the grid */
+        @@media screen and (max-width: 767px) {
+            .row.content {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <!-- Logo -->
+                <div class="col-lg-2 col-12 align-self-center">
+                    <div class="logo">
+                        <a >
+                            <img class="light-logo" src="~/img/white-logo.png" alt="logo" />
+                            <img class="dark-logo" src="~/img/white-logo.png" alt="logo" />
+                        </a>
+                    </div>
+                    <div class="mobile-menu-tg">
+                        <div class="mobile-lg-toggle">
+                            <div class="toggle-btn-lg">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="mobile-menu">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Header Right -->
+                <div class="col-lg-10 col-12">
+                    <!-- Right Button -->
+                    <div class="dl-cv">
+                        <a class="button-1" asp-controller="Management" asp-action="SignOut">Sign Out</a>
+                    </div>
+                    <!-- Menu -->
+                    <div class="menu">
+                        <nav>
+                            <ul style="text-decoration:none;">
+                                <li class="nav-item current">
+                                    <a class="nav-link" asp-action="Dashboard">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-action="Users">Users</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-action="Contact">Contacts</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<nav class="navbar navbar-inverse visible-xs" style="margin-top:7%;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a asp-action="Dashboard">Dashboard</a></li>
+                <li><a asp-action="Users">Registered Users</a></li>
+                <li><a asp-action="Contact">Contact Us Details</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row content" style="margin-top:7%;" id="nav">
+        <div class="col-sm-3 sidenav hidden-xs" style="margin-top: 1.5%;">
+            <img id="avatar" src="~/img/about.jpeg" />
+            <ul id="nav-ul" class="nav nav-pills nav-stacked" style="flex-direction:column;">
+                <li class="active"><a asp-action="Dashboard">Dashboard</a></li>
+                <li><a asp-action="Users">Registered Users</a></li>
+                <li><a asp-action="Contact">Contact Us Details</a></li>
+
+            </ul><br>
+        </div>
+        <br>
+
+            <div class="col-sm-9" style="margin-top: 1.5%;">
+            <div class="well">
+                <h3>Dashboard</h3>
+                <p>Efolio Management</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="well">
+                        <h3>Users</h3>
+                        <p>10</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="well">
+                        <h3>Sessions</h3>
+                        <p>100 Million</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="well">
+                        <h3>Admins</h3>
+                        <p>10 Million</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="well">
+                            <h3>Contact Us</h3>
+                        <p>7</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="well">
+                        <p><b>To-Do</b></p>
+                        <p>Edit Button</p>
+                        <p>Delete Button</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="well">
+                        <p><b>To-Do</b></p>
+                        <p>Get Counts </p>
+                        <p>Fill Dashboard</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="well">
+                        <p><b>To-Do</b></p>
+                        <p>Sign Out</p>
+                        <p>Fix Header</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="well">
+                        <p>Text</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="well">
+                        <p>Text</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
