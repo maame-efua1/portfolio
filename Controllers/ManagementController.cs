@@ -148,11 +148,7 @@ namespace EFolio1.Controllers
             return RedirectToAction("Index", "Management");
         }
 
-        public IActionResult Update()
-        {
-            
-            return View();
-        }
+        
         public IActionResult Edit(int userId, SignUp User)
         {
             string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=EFolio;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
@@ -161,7 +157,7 @@ namespace EFolio1.Controllers
             {
                 string query = $"UPDATE Registration SET firstname=@firstname,lastname=@lastname,username=@username WHERE UserId = {userId};";
 
-                connection.Open();
+                
                 SqlCommand command = new SqlCommand(query, connection);
 
 
@@ -170,17 +166,62 @@ namespace EFolio1.Controllers
                 command.Parameters.AddWithValue("@username", User.username);
                 command.Parameters.AddWithValue("@userid", userId);
                 command.Parameters.AddWithValue("@datecreated", User.datecreated);
-                
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
 
-                command.ExecuteNonQuery();
-                connection.Close();
-
-                return RedirectToAction("Users");
+                    return RedirectToAction("Users", "Management");
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    // Handle the exception or provide feedback to the user
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            return View();
         }
-        }
 
-        public IActionResult CEdit()
+        public IActionResult CEdit(int userId, Contacts User)
         {
+            string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=EFolio;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = $"UPDATE Registration SET firstname=@firstname,lastname=@lastname,username=@username WHERE UserId = {userId};";
+
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+
+                command.Parameters.AddWithValue("@name", User.name);
+                command.Parameters.AddWithValue("@email", User.email);
+                command.Parameters.AddWithValue("@phone", User.phone);
+                command.Parameters.AddWithValue("@subject", User.subject);
+                command.Parameters.AddWithValue("@message", User.message);
+                command.Parameters.AddWithValue("@userid", userId);
+                command.Parameters.AddWithValue("@datecreated", User.datecreated);
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+
+                    return RedirectToAction("Contact", "Management");
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    // Handle the exception or provide feedback to the user
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
             return View();
         }
 

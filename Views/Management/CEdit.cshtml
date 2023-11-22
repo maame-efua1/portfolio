@@ -1,0 +1,104 @@
+﻿
+<head>
+    <link rel="stylesheet" href="~/loginstyle.css" />
+    <style>
+        #phone{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #8647a0;
+            box-sizing: border-box;
+            border-radius: 9px;
+        }
+</style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- Start Header Area -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <!-- Logo -->
+                <div class="col-lg-2 col-12 align-self-center">
+                    <div class="logo">
+                        <a>
+                            <img class="light-logo" src="~/img/white-logo.png" alt="logo" />
+                            <img class="dark-logo" src="~/img/white-logo.png" alt="logo" />
+                        </a>
+                    </div>
+                    <div class="mobile-menu-tg">
+                        <div class="mobile-lg-toggle">
+                            <div class="toggle-btn-lg">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="mobile-menu">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Header Right -->
+                <div class="col-lg-10 col-12">
+                    <!-- Right Button -->
+                    <div class="dl-cv">
+                        <a class="button-1" asp-controller="Management" asp-action="SignOut">Sign Out</a>
+                    </div>
+                    <!-- Menu -->
+                    <div class="menu">
+                        <nav>
+                            <ul>
+                                <li class="nav-item ">
+                                    <a class="nav-link" asp-action="Dashboard">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-action="Users">Users</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-action="Contact">Contacts</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Header Area -->
+    <section class="login-area pt-20 pb-50" id="login">
+        <div class="login-container">
+            <form method="post">
+                <div class="container">
+                    <h2 id="heading">Update Contact Us Details</h2>
+                    <br />
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" placeholder="Enter Name" id="name" name="name">
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" id="email" name="email">
+
+                    <label for="phone"><b>Phone</b></label>
+                    <input type="number" placeholder="Enter Phone" id="phone" name="phone">
+
+                    <label for="subject"><b>Subject</b></label>
+                    <input type="text" placeholder="Enter Subject" id="subject" name="subject">
+
+                    <label for="message"><b>Message</b></label>
+                    <input type="text" placeholder="Enter Message" id="message" name="message">
+
+
+                    <button type="submit">Update</button><br>
+
+                </div>
+
+
+            </form>
+        </div>
+    </section>
+</body>

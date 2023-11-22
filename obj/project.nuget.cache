@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "80ZPJ1vHBPlgU5lXvPUDRCJjVRqMEfHRRRyrilCR6QvKK2932P888Wf3VjtCq+aPTcKZvvUa+nt+vM+D/1DQsw==",
+  "dgSpecHash": "zKZt5U/jJbOCXspFC1XmlJr4b4gqLdVopOqupvNW+4upYOHTRvqQxcqkfo9rRkklD41SCxX8GSbbIjgXZMxxVw==",
   "success": true,
-  "projectFilePath": "D:\\EFolio1\\EFolio1.csproj",
+  "projectFilePath": "D:\\EFOLIO1\\EFolio1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Eugenia Efua Quartey\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Eugenia Efua Quartey\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

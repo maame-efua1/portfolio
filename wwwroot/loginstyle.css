@@ -50,15 +50,16 @@ form {
 
 
 /* Full-width inputs */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #8647a0;
-  box-sizing: border-box;
-  border-radius: 9px;
+input[type=text], input[type=password], input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #8647a0;
+    box-sizing: border-box;
+    border-radius: 9px;
 }
+
 
 /* Set a style for all buttons */
 button {
