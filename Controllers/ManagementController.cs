@@ -10,64 +10,7 @@ namespace EFolio1.Controllers
     {
         public IActionResult Index(Admin Admins)
         {
-            string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=EFolio;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT COUNT(*) FROM Admins WHERE username = @username AND password = @password;";
-
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@username", Admins.username);
-                command.Parameters.AddWithValue("@password", Admins.password);
-
-                try
-                {
-                    connection.Open();
-                    int userCount = (int)command.ExecuteScalar();
-
-                    if (userCount > 0)
-                    {
-                        // Login successful, redirect to another view
-                        return RedirectToAction("Dashboard", "Management");
-                    }
-                    else
-                    {
-                        // Login failed, display a message or redirect to login page with an error
-                        TempData["ErrorMessage"] = "Invalid username or password.";
-                        return RedirectToAction("Index", "Management");
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    Console.WriteLine("Error: " + ex.Message);
-                    // Handle the exception or provide feedback to the user
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
             return View();
-        }
-
-        public IActionResult UserCount()
-        {
-            string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=EFolio;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT COUNT(*) FROM Registration;";
-
-                SqlCommand command = new SqlCommand(query, connection);
-
-                connection.Open();
-                int userCount = (int)command.ExecuteScalar();
-                connection.Close();
-
-                ViewBag.UserCount = userCount; 
-
-                return View();
-            }
         }
 
 
@@ -137,6 +80,7 @@ namespace EFolio1.Controllers
                 signups.Add(signup);
             }
             connection.Close();
+            
 
             return View(signups);
         }
@@ -148,9 +92,61 @@ namespace EFolio1.Controllers
             return RedirectToAction("Index", "Management");
         }
 
-        
+        public IActionResult Edit(int userId)
+        {
+            string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=EFolio;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                
+                try
+                {
+                    string query = $"Select * from Registration where userid={userId}";
+
+
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    connection.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+
+                    reader.Read();
+                    var userid = reader["userid"].ToString();
+                    var firstname = reader["firstname"].ToString();
+                    var lastname = reader["lastname"].ToString();
+                    var username = reader["username"].ToString();
+
+                    var user = new SignUp()
+                    {
+                        userid = userid,
+                        firstname = firstname,
+                        lastname = lastname,
+                        username = username
+
+                    };
+
+                    return View(user);
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    // Handle the exception or provide feedback to the user
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            return View();
+           
+        }
+
+
+        [HttpPost]
         public IActionResult Edit(int userId, SignUp User)
         {
+            
             string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=EFolio;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -183,49 +179,14 @@ namespace EFolio1.Controllers
                     connection.Close();
                 }
             }
+            
+
             return View();
         }
 
-        public IActionResult CEdit(int userId, Contacts User)
-        {
-            string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=EFolio;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+        
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = $"UPDATE Registration SET firstname=@firstname,lastname=@lastname,username=@username WHERE UserId = {userId};";
-
-
-                SqlCommand command = new SqlCommand(query, connection);
-
-
-                command.Parameters.AddWithValue("@name", User.name);
-                command.Parameters.AddWithValue("@email", User.email);
-                command.Parameters.AddWithValue("@phone", User.phone);
-                command.Parameters.AddWithValue("@subject", User.subject);
-                command.Parameters.AddWithValue("@message", User.message);
-                command.Parameters.AddWithValue("@userid", userId);
-                command.Parameters.AddWithValue("@datecreated", User.datecreated);
-                try
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-
-                    return RedirectToAction("Contact", "Management");
-                }
-                catch (SqlException ex)
-                {
-                    Console.WriteLine("Error: " + ex.Message);
-                    // Handle the exception or provide feedback to the user
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
-            return View();
-        }
-
-        public IActionResult Delete(string userId)
+        public IActionResult Delete(string userId, SignUp User)
         {
             string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=EFolio;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 

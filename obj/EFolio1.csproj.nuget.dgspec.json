@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\EFOLIO1\\EFolio1.csproj": {}
+    "D:\\EFolio1\\EFolio1.csproj": {}
   },
   "projects": {
-    "D:\\EFOLIO1\\EFolio1.csproj": {
+    "D:\\EFolio1\\EFolio1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EFOLIO1\\EFolio1.csproj",
+        "projectUniqueName": "D:\\EFolio1\\EFolio1.csproj",
         "projectName": "EFolio1",
-        "projectPath": "D:\\EFOLIO1\\EFolio1.csproj",
+        "projectPath": "D:\\EFolio1\\EFolio1.csproj",
         "packagesPath": "C:\\Users\\Eugenia Efua Quartey\\.nuget\\packages\\",
-        "outputPath": "D:\\EFOLIO1\\obj\\",
+        "outputPath": "D:\\EFolio1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eugenia Efua Quartey\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.2, )"

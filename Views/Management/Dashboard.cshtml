@@ -39,7 +39,13 @@
                 color: white;
                 background-color: #8E44AD;
             }
-
+        #list{
+            color:white;
+            background: #8E44AD;
+        }
+        #list1, #list2{
+            color:black;
+        }
 
         /* On small screens, set height to 'auto' for the grid */
         @@media screen and (max-width: 767px) {
@@ -57,7 +63,7 @@
                 <!-- Logo -->
                 <div class="col-lg-2 col-12 align-self-center">
                     <div class="logo">
-                        <a >
+                        <a asp-controller="Home" asp-action="Index">
                             <img class="light-logo" src="~/img/white-logo.png" alt="logo" />
                             <img class="dark-logo" src="~/img/white-logo.png" alt="logo" />
                         </a>
@@ -124,9 +130,9 @@
         <div class="col-sm-3 sidenav hidden-xs" style="margin-top: 1.5%;">
             <img id="avatar" src="~/img/about.jpeg" />
             <ul id="nav-ul" class="nav nav-pills nav-stacked" style="flex-direction:column;">
-                <li class="active"><a asp-action="Dashboard">Dashboard</a></li>
-                <li><a asp-action="Users">Registered Users</a></li>
-                <li><a asp-action="Contact">Contact Us Details</a></li>
+                    <li class="active"><a asp-action="Dashboard" id="list">Dashboard</a></li>
+                    <li><a asp-action="Users" id="list1">Registered Users</a></li>
+                    <li><a asp-action="Contact"id ="list2">Contact Us Details</a></li>
 
             </ul><br>
         </div>

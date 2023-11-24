@@ -8,8 +8,8 @@ namespace EFolio1.Controllers
 {
     public class StartController : Controller
     {
+        private const string firstname = "";
 
-        
         public IActionResult SignIn(SignUp User)
         {
             {
@@ -59,6 +59,8 @@ namespace EFolio1.Controllers
 
         public IActionResult SignUp(SignUp User)
         {
+            HttpContext.Session.SetString(firstname, "");
+
             string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=EFolio;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
              
             if (User.password == User.confirmpassword)
@@ -79,18 +81,20 @@ namespace EFolio1.Controllers
                     {
                         connection.Open();
                         command.ExecuteNonQuery();
-
+                        
                         return RedirectToAction("SignIn","Start");
+                        
                     }
                     catch (SqlException ex)
                     {
-                        Console.WriteLine("Error: " + ex.Message);
+                        Console.WriteLine("Error: " + User.errormessage);
                         // Handle the exception or provide feedback to the user
                     }
                     finally
                     {
                         connection.Close();
                     }
+                    
                 }
             }
             else
@@ -98,7 +102,7 @@ namespace EFolio1.Controllers
                 // Handle case where passwords don't match
                 Console.WriteLine("Passwords do not match");
             }
-
+            Console.WriteLine(User.successmessage);
             return View();
         }
 

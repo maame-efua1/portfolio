@@ -20,7 +20,10 @@ namespace EFolio1.Models
 
         public DateTime datecreated { get; set; } = DateTime.Now;
 
-        public int usercount { get; set; }
+        public string Eerrormessage { get; set; } = "Unable to edit user info";
+        public string errormessage { get; set; } = "Unable to add user ";
+        public string Esuccessmessage { get; set; } = "User info updated successfully";
+        public string successmessage { get; set; } = "User added successfully";
 
     }
 }

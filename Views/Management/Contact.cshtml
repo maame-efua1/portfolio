@@ -16,17 +16,12 @@
         /* tr:nth-child(even) {
             background-color: #dddddd;
         } */
-        #edit{
-            border-radius: 5px;
-            border: 1px solid #8E44AD;
-            margin-right:2px;
-        }
         #delete{
             border-radius: 5px;
             border: 1px solid #8E44AD;
         }
 
-        #del, #edi {
+        #del {
             color: black;
         }
     </style>
@@ -46,7 +41,7 @@
                 <!-- Logo -->
                 <div class="col-lg-2 col-12 align-self-center">
                     <div class="logo">
-                        <a >
+                        <a asp-controller="Home" asp-action="Index">
                             <img class="light-logo" src="~/img/white-logo.png" alt="logo" />
                             <img class="dark-logo" src="~/img/white-logo.png" alt="logo" />
                         </a>
@@ -106,7 +101,7 @@
             <th>Subject</th>
             <th>Message</th>
             @* <th>Date Created</th> *@
-            <th></th>
+            <th>Action</th>
             
         </tr>
 
@@ -121,7 +116,6 @@
             <td>@item.message</td>
             <td >
                     <div style="text-align:center;">
-                        <button id="edit"> <a href="/Management/CEdit?userId=@(item.userid)" id="edi">Edit<i class="fas fa-pen"></i></a></button>
                         <button id="delete"> <a href="/Management/CDelete?userId=@(item.userid)" id="del">Delete<i class="fas fa-trash"></i></a></button>
                     </div>
             </td>

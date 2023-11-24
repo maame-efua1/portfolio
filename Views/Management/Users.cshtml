@@ -63,7 +63,7 @@
                 <div class="col-lg-10 col-12">
                     <!-- Right Button -->
                     <div class="dl-cv">
-                        <a class="button-1" asp-controller="Management" asp-action="SignOut">Sign Out</a>
+                        <a class="button-1" asp-controller="Home" asp-action="Index">Sign Out</a>
                     </div>
                     <!-- Menu -->
                     <div class="menu">
@@ -117,7 +117,7 @@
                 
                 <td>
                     <div style="text-align:center;">
-                        <button id="edit" > <a href="/Management/Edit?userId=@(item.userid)" id="edi">Edit<i class="fas fa-pen"></i></a></button>
+                        <button id="edit"> <a href="/Management/Edit?userId=@(item.userid)&firstname=@(item.firstname)&lastname=@(item.lastname)&username=@(item.username)" id="edi">Edit<i class="fas fa-pen"></i></a></button>
                         <button id="delete"> <a href="/Management/Delete?userId=@(item.userid)" id="del">Delete<i class="fas fa-trash"></i></a></button>
                     </div>
                 </td>
@@ -127,4 +127,6 @@
         }
         
     </table>
+
+    
 </body>
