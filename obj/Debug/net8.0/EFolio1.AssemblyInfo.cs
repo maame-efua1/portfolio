@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EFolio1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a48921d78634785984bd3b35b91eb529cfe4b860")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7af135c3e881b96c8b33ea24c4c1b45707f065a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("EFolio1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EFolio1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

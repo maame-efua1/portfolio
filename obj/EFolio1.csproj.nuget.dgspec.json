@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\EFolio1\\EFolio1.csproj": {}
+    "D:\\EFOLIO1\\EFolio1.csproj": {}
   },
   "projects": {
-    "D:\\EFolio1\\EFolio1.csproj": {
+    "D:\\EFOLIO1\\EFolio1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EFolio1\\EFolio1.csproj",
+        "projectUniqueName": "D:\\EFOLIO1\\EFolio1.csproj",
         "projectName": "EFolio1",
-        "projectPath": "D:\\EFolio1\\EFolio1.csproj",
+        "projectPath": "D:\\EFOLIO1\\EFolio1.csproj",
         "packagesPath": "C:\\Users\\Eugenia Efua Quartey\\.nuget\\packages\\",
-        "outputPath": "D:\\EFolio1\\obj\\",
+        "outputPath": "D:\\EFOLIO1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eugenia Efua Quartey\\AppData\\Roaming\\NuGet\\NuGet.Config",

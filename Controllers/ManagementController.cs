@@ -8,18 +8,66 @@ namespace EFolio1.Controllers
 {
     public class ManagementController : Controller
     {
-        public IActionResult Index(Admin Admins)
+        public IActionResult Index(Admin Admin)
         {
-            return View();
+            
+            {
+                string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=EFolio;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT COUNT(*) FROM Admins WHERE username = @username AND password = @password";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@username", Admin.username);
+                    command.Parameters.AddWithValue("@password", Admin.password);
+
+                    try
+                    {
+                        connection.Open();
+                        int userCount = (int)command.ExecuteScalar();
+
+                        if (userCount > 0)
+                        {
+                            // Login successful, redirect to another view
+                            return RedirectToAction("Dashboard", "Management");
+                        }
+                        else
+                        {
+                            // Login failed, display a message or redirect to login page with an error
+                            TempData["ErrorMessage"] = "Invalid username or password.";
+                            return RedirectToAction("Index", "Management");
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                        // Handle the exception or provide feedback to the user
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+
+                return View();
+            }
         }
 
 
         public IActionResult Dashboard()
         {
+            HttpContext.Session.SetString("name", "Eugenia");
+
             return View();
         }
+
         public IActionResult Contact()
         {
+            var name = HttpContext.Session.GetString("name");
+
+            if (name == null) return RedirectToAction("Index");
+
             string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=EFolio;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 
             SqlConnection connection = new SqlConnection(connectionString);
@@ -33,6 +81,7 @@ namespace EFolio1.Controllers
             SqlDataReader reader = command.ExecuteReader();
 
             List<Contacts> contacts = new List<Contacts>();
+
 
             while (reader.Read())
             {
@@ -87,7 +136,8 @@ namespace EFolio1.Controllers
 
         public IActionResult SignOut()
         {
-            HttpContext.SignOutAsync();
+
+            HttpContext.Session.GetString("name");
 
             return RedirectToAction("Index", "Management");
         }
