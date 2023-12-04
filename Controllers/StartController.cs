@@ -55,8 +55,8 @@ namespace EFolio1.Controllers
             }
         }
 
-        
 
+        
         public IActionResult SignUp(SignUp User)
         {
             HttpContext.Session.SetString(firstname, "");

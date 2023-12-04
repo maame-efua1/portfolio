@@ -1,6 +1,19 @@
 ﻿
 <head>
     <link rel="stylesheet" href="~/loginstyle.css" />
+    <style>
+        #alert-danger {
+            color: #dc3545 !important;
+            background-color: #e9d7f8;
+            border-color: #8e44ad94;
+        }
+
+        #alert-danger2 {
+            color: #dc3545 !important;
+            background-color: #e9d7f8;
+            border-color: #8e44ad94;
+        }
+    </style>
 </head>
 <body>
     <!-- Preloader -->
@@ -36,16 +49,29 @@
     <!-- End Header Area -->
     <section class="login-area pt-20 pb-50" id="login">
         <div class="login-container">
+            
             <form method="post">
                 <div class="container">
                     <h2 id="heading">Sign In</h2>
                     <br />
                     <label for="username"><b>Username</b></label>
                     <input type="text" placeholder="Enter Username" id="username" name="username" required>
-
+                    @if (TempData["UsernameError"] != null)
+                    {
+                        <div class="text-danger" id="alert-danger">
+                            <i class="fas fa-exclamation-circle"></i>Invalid username.
+                        </div>
+                        
+                    }
                     <label for="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" id="password" name="password" required>
-
+                    @if (TempData["PasswordError"] != null)
+                    {
+                        <div class="text-danger" id="alert-danger2">
+                            <i class="fas fa-exclamation-circle"></i>Incorrect password.
+                        </div>
+                       
+                    }
                     <button type="submit">Sign In</button><br>
                     @* <label>
                         <input type="checkbox" checked="checked" name="remember"> Remember me
