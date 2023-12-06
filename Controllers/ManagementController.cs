@@ -43,12 +43,12 @@ namespace EFolio1.Controllers
                             if (usernameCount > 0)
                             {
                                 // Username exists but password is incorrect
-                                TempData["PasswordError"] = "" ;
+                                TempData["ErrorMessage"] = "Incorrect password. Please try again.";
                             }
                             else
                             {
                                 // Username doesn't exist
-                                TempData["UsernameError"] = "";
+                                TempData["ErrorMessage"] = "Invalid username. Please try again.";
                             }
 
                             return RedirectToAction("Index", "Management");
